@@ -1,0 +1,42 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br><br>
+<br><br>
+<br>
+<center>
+<h4><b>Vegetarian</b></h4>
+</center>
+<hr>
+<div>
+    
+{% for i in blog %}
+<div class="col-xl-4 col-md-6 mt-xl-0 mt-lg-5 mt-4">
+    <div class="blog-info">
+        <div class="position-relative">
+            <a href="#blog">
+                <img class="img-fluid" src="{{i.file.url}}" alt="blog-image">
+            </a>
+           
+        </div>
+        <div class="title-wrap title-wrap-2">
+            <h4 class="title"><a href="#blog">{{i.recipe_name}}</a> </h4>
+           
+            <p>{{i.description}}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+    <br><br>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+
+{% load static %}
+
+
+<br><br><br><br><br><br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add items</title>
+    <link href="//fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"rel="stylesheet">
+<link
+    href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<!-- //google-fonts -->
+<!-- Template CSS Style link -->
+<link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+    
+    <div class="form-inner-cont mx-auto" style="max-width:800px">
+        <h3 class="title-style text-center mb-4">please enter details of your item!</h3>
+        <form action="/add/"  enctype="multipart/form-data" method="post" class="signin-form">
+            {% csrf_token %}
+            {{username}}
+            <div class="row align-form-map">
+                <div class="col-sm-6 form-input">
+                    <input type="text" name="recp_name" id="w3lName" placeholder="recipe Name" />
+                </div>
+                
+
+                <div class="align-items-left">
+                    <select name="cate" id="cars">
+                    <option value="dessert and drinks">dessert and drinks</option>
+                    <option value="non-veg">non-veg</option>
+                    <option value="vegetarian">vegetarian</option>
+                    
+                    </select>
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="text-area" name="description" id="w3lSender" placeholder="description of your recipe" required="" />
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="file" name="photo" id="w3lSender" placeholder="upload your file" required="" />
+                </div>
+                
+               
+            </div>
+            
+            <div class="submit text-center">
+                <button type="submit" class="btn btn-style">ADD</button>
+                <br>
+                
+            </div>
+            <a href='/'><h4><u><b><-- Back</b></u></h4></a>
+           
+        </form>
+       
+    </div>
+</body>
+
+</html>
+
+<br><br><br><br><br><br>

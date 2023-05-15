@@ -1,0 +1,33 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-lg-5 py-md-4">
+    <div class="w3l-subscribe-content text-center bg-clr-white py-md-5 py-2">
+        {% comment %} <h2>Donating to {{blog.recipe_name}}</h2>
+        <h3>by {{username.first_name}}</h3> {% endcomment %}
+        <div class="py-5">
+            <h3 class="section-title-left mb-2">Please Enter Amount</h3>
+            <form action="/homepage/" method="POST" class="subscribe">
+                {% csrf_token %}
+                <input type="text" name="pamount" placeholder='amount'> 
+                <br>
+<br>
+
+                <label for="blog-names">Choose a blog name:</label>
+                <br>
+                <select name="blog-names" id="blog-names">
+                <option value="momo">momo</option>
+                <option value="pizza">pizza</option>
+                <option value="egg curry">egg curry</option>
+                 
+                 </select>
+                <button class="btn btn-style btn-primary">pay now</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %} 

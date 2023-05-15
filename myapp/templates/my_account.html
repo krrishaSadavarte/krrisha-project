@@ -1,0 +1,44 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+{% load static %}
+<br><br>
+<br><br>
+<br><br>
+    <center>
+    <div class="form-inner-cont mx-auto" style="max-width:800px">
+        <h3 class="title-style text-center mb-4">My Profile</h3>
+        <form action="/my_account/" method="post" class="signin-form">
+            {% csrf_token %}
+            {{msg}}
+            <div class="">
+                <div class = "">
+                    <input type="text" name="fname" id="w3lName" value='{{username.first_name}}' placeholder="first name" />
+                </div>
+                <br>
+                <div class = "">
+                    <input type="text" name="lname" id="w3lName" value='{{username.last_name}} ' placeholder="last name" />
+                </div>
+                <br>
+                <div class = "">
+                    <input type="text" name="username" id="w3lName" value='{{username.username}} ' placeholder="username" />
+                </div>
+                <br>
+                <div class = "">
+                    <input type="text" name="email" id="w3lName" value='{{username.email}} ' placeholder="email" disabled />
+                </div>
+                <br>
+            </div>
+            
+            <div class="submit text-center">
+                <button type="submit" class="btn btn-style">save changes</button>
+            </div>
+            <br>
+           
+        </form>
+    </div>
+</center>
+<br><br>
+<br><br>
+<br><br>
+{% endblock %}

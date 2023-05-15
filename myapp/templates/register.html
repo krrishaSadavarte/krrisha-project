@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <link href="//fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"rel="stylesheet">
+<link
+    href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<!-- //google-fonts -->
+<!-- Template CSS Style link -->
+<link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+    <div class="form-inner-cont mx-auto" style="max-width:800px">
+        <h3 class="title-style text-center mb-4"> Registartion Form</h3>
+        <form action="/registersubmit/" method="post" class="signin-form">
+            {% csrf_token %}
+            {{msg}}
+            <div class="row align-form-map">
+                <div class="col-sm-6 form-input">
+                    <input type="text" name="fname" id="w3lName" placeholder=" First Name" />
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="text" name="lname" id="w3lName" placeholder=" Last Name" />
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="text" name="username" id="w3lName" placeholder="username" />
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="email" name="email" id="w3lSender" placeholder="Email" required="" />
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="password" name="password" placeholder="password" class="contact-input">
+                </div>
+                <div class="col-sm-6 form-input">
+                    <input type="password" name="repassword" placeholder="Re-enter password" class="contact-input">
+                </div>
+            </div>
+            
+            <div class="submit text-center">
+                <button type="submit" class="btn btn-style">Register</button>
+            </div>
+            <br>
+            <center>
+           <a href='/login/'><span>already have an account? | login</span></a> 
+            </center>
+        </form>
+    </div>
+</body>
+
+</html>
